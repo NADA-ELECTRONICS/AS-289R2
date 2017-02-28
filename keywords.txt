@@ -1,0 +1,47 @@
+#######################################################
+# keywords file for AS-289R2 Thermal Printer Shield
+# Released as MIT license
+#######################################################
+
+#######################################################
+# KEYWORD1
+#######################################################
+
+AS289R2	KEYWORD1
+
+#######################################################
+# KEYWORD2
+#######################################################
+
+print			KEYWORD2
+write			KEYWORD2
+initialize		KEYWORD2
+putLineFeed		KEYWORD2
+clearBuffer		KEYWORD2
+setDoubleSizeHeight	KEYWORD2
+clearDoubleSizeHeight	KEYWORD2
+setDoubleSizeWidth	KEYWORD2
+clearDoubleSizeWidth	KEYWORD2
+setLargeFont		KEYWORD2
+clearLargeFont		KEYWORD2
+setANKFont		KEYWORD2
+setKanjiFont		KEYWORD2
+printQRCode		KEYWORD2
+printBarCode		KEYWORD2
+printBitmapImage	KEYWORD2
+setLineSpaceing		KEYWORD2
+setPrintDirection	KEYWORD2
+putPaperFeed		KEYWORD2
+setInterCharacterSpace	KEYWORD2
+defaultInterCharacterSpace	KEYWORD2
+putPrintPosition	KEYWORD2
+setScript		KEYWORD2
+clearScript		KEYWORD2
+setQuadrupleSize	KEYWORD2
+clearQuadrupleSize	KEYWORD2
+setEnlargement		KEYWORD2
+clearEnlargement	KEYWORD2
+setBarCodeHeight	KEYWORD2
+defaultBarCodeHeight	KEYWORD2
+setBarCodeBarSize	KEYWORD2
+defaultBarCodeBarSize	KEYWORD2
