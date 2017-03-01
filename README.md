@@ -6,6 +6,9 @@ Please see the datasheet.
 [Control Commands English-Language](http://www.nada.co.jp/as289r/download/as289r_cmd_en.pdf)  
 [Control Commands Japanese-Language](http://www.nada.co.jp/as289r/download/as289r_cmd.pdf)  
 
+# Examples
+Please see the [example code.](https://github.com/NADA-ELECTRONICS/AS-289R2/blob/master/examples/AS-289R2.ino)
+
 # Lisence
 AS-289R2 Thermal Printer Shield for Arduino  
 NADA ELECTRONICS, LTD.  
