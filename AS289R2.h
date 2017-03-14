@@ -37,6 +37,11 @@ class AS289R2
         BCODE_CODABAR
     };
 
+    enum script_mode {
+        SCRIPT_CANCEL = 0,
+        SCRIPT_SUPER,
+        SCRIPT_SUB
+    };
 
     AS289R2(Stream& s);
     void print(const char* text);
@@ -84,7 +89,7 @@ class AS289R2
 	// Move print position
 	void putPrintPosition(uint8_t position);
 	// Apply script
-	void setScript(uint8_t script);
+	void setScript(script_mode script);
 	// Cancel script
 	void clearScript();
 	// Apply quadruple size printing
