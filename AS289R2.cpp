@@ -157,7 +157,7 @@ void AS289R2::putPrintPosition(uint8_t position)
 	serial.write(buffer, 3);
 }
  
-void AS289R2::setScript(uint8_t script)
+void AS289R2::setScript(script_mode script)
 {
 	byte buffer[3] ={0x1B, 0x73, script};
 	serial.write(buffer, 3);
