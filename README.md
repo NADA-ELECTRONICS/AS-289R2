@@ -1,5 +1,5 @@
 # AS-289R2 Thermal Printer Shield
-[AS-289R2 Thermal Printer Shield](http://www.nada.co.jp/as289r2/en/) library for Arduino.
+[AS-289R2 Thermal Printer Shield](http://www.nada.co.jp/as289r2/en/) library for Arduino.  
 Arduino library ported from the [mbed](https://developer.mbed.org/components/AS-289R2-Thermal-Printer-Shield/).
 
 # Control Commands
