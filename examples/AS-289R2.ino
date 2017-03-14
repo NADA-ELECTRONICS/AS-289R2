@@ -187,16 +187,16 @@ void AS289R2_demo()
 
   /* Superscript */
   tp.print("1cm");
-  tp.setScript(1);
+  tp.setScript(AS289R2::SCRIPT_SUPER);
   tp.print("3");
   tp.print("\r");
-  tp.clearScript();
+  tp.setScript(AS289R2::SCRIPT_CANCEL);
 
   /* Subscript */
   tp.print("H");
-  tp.setScript(2);
+  tp.setScript(AS289R2::SCRIPT_SUB);
   tp.print("2");
-  tp.clearScript();
+  tp.setScript(AS289R2::SCRIPT_CANCEL);
   tp.print("O\r");
 
   /* PaperFeed */
