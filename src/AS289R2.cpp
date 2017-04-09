@@ -39,7 +39,7 @@ void AS289R2::putLineFeed(uint8_t lines)
 
 void AS289R2::clearBuffer(void)
 {
-    serial.write(0x18);
+  serial.write(0x18);
 }
 
 void AS289R2::setDoubleSizeHeight(void)
@@ -92,31 +92,31 @@ void AS289R2::setKanjiFont(uint8_t font)
 
 void AS289R2::printQRCode(uint8_t err, const char *param)
 {
-    uint8_t len = strlen(param);
+  uint8_t len = strlen(param);
 	byte buffer[4] ={0x1D, 0x78, err, len};
 	serial.write(buffer, 4);
     for (uint8_t i = 0; i < len; i++) {
-        serial.write(param[i]);
+      serial.write(param[i]);
     }
 }
 
 void AS289R2::printBarCode(uint8_t code, const char *param)
 {
-    uint8_t len = strlen(param);
+  uint8_t len = strlen(param);
  	byte buffer[3] ={0x1D, 0x6B, code};
 	serial.write(buffer, 3);
-    for (uint8_t i = 0; i < len; i++) {
-        serial.write(param[i]);
-    }
-    serial.write("\0", 1);
+  for (uint8_t i = 0; i < len; i++) {
+    serial.write(param[i]);
+  }
+  serial.write("\0", 1);
 }
 
 void AS289R2::printBitmapImage(uint8_t mode, uint16_t lines)
 {
-    byte buffer[5] ={0x1C, 0x2A, mode, 0, 0};
-    buffer[3] = (lines >> 8) & 0xFF;
-    buffer[4] = (lines >> 0) & 0xFF;
-    serial.write(buffer, 5);
+  byte buffer[5] ={0x1C, 0x2A, mode, 0, 0};
+  buffer[3] = (lines >> 8) & 0xFF;
+  buffer[4] = (lines >> 0) & 0xFF;
+  serial.write(buffer, 5);
 }
 
 void AS289R2::setLineSpaceing(uint8_t space)

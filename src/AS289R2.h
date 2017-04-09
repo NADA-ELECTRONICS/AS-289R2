@@ -47,13 +47,13 @@ class AS289R2 : public Print
     AS289R2(Stream& s);
     virtual size_t write(const char *str);
 	  virtual size_t write(uint8_t c);
-	// Initialize
+	   // Initialize
     void initialize(void);
-	// Line feed
+	   // Line feed
     void putLineFeed(uint8_t lines);
     // Clear data
-	void clearBuffer(void);
-	// Apply double-height printing
+	  void clearBuffer(void);
+	  // Apply double-height printing
     void setDoubleSizeHeight(void);
     // Cancel double-height printing
     void clearDoubleSizeHeight(void);
@@ -75,40 +75,40 @@ class AS289R2 : public Print
     void printBarCode(uint8_t code, const char* param);
     // Print Bitmap image
     void printBitmapImage(uint8_t mode, uint16_t lines);
-	// Specify line spacing
+	  // Specify line spacing
     void setLineSpaceing(uint8_t space);
- 	// Default line spacing
+ 	  // Default line spacing
     void defaultLineSpaceing(void);
     // Specify print direction
     void setPrintDirection(uint8_t direction);
     // Default print direction
-	void putPaperFeed(uint8_t space);
-	// Specify inter-character space
-	void setInterCharacterSpace(uint8_t space);
-	// Default inter-character space
-	void defaultInterCharacterSpace();
-	// Move print position
-	void putPrintPosition(uint8_t position);
-	// Apply script
-	void setScript(script_mode script);
-	// Cancel script
-	void clearScript();
-	// Apply quadruple size printing
-	void setQuadrupleSize();
-	// Cancel quadruple size printing
-	void clearQuadrupleSize();
-	// Specify width-height enlargement ratio
-	void setEnlargement(uint8_t width, uint8_t height);
-	// Clear enlargement ratio
-	void clearEnlargement();
-	// Clear enlargement ratio
-	void setBarCodeHeight(uint8_t height);
-	// Specifying barcode height
-	void defaultBarCodeHeight();
-	// Specify Barcodebar size
-	void setBarCodeBarSize(uint8_t narrowbar, uint8_t widebar);
-	// Default Barcodebar size
-	void defaultBarCodeBarSize();
+  	void putPaperFeed(uint8_t space);
+  	// Specify inter-character space
+  	void setInterCharacterSpace(uint8_t space);
+  	// Default inter-character space
+  	void defaultInterCharacterSpace();
+  	// Move print position
+  	void putPrintPosition(uint8_t position);
+  	// Apply script
+  	void setScript(script_mode script);
+  	// Cancel script
+  	void clearScript();
+  	// Apply quadruple size printing
+  	void setQuadrupleSize();
+  	// Cancel quadruple size printing
+  	void clearQuadrupleSize();
+  	// Specify width-height enlargement ratio
+  	void setEnlargement(uint8_t width, uint8_t height);
+  	// Clear enlargement ratio
+  	void clearEnlargement();
+  	// Clear enlargement ratio
+  	void setBarCodeHeight(uint8_t height);
+  	// Specifying barcode height
+  	void defaultBarCodeHeight();
+  	// Specify Barcodebar size
+  	void setBarCodeBarSize(uint8_t narrowbar, uint8_t widebar);
+  	// Default Barcodebar size
+  	void defaultBarCodeBarSize();
 
   private:
     Stream& serial;
