@@ -7,17 +7,21 @@ AS289R2::AS289R2(Stream& s): serial(s)
 
 }
 
-void AS289R2::print(const char *text)
+size_t AS289R2::write(const char *str)
 {
-	uint8_t len = strlen(text);
+	uint8_t len = strlen(str);
 	for(uint8_t i = 0; i < len; i++) {
-		serial.write(text[i]);
-    }
+		if(str[i] == '\n') continue;
+		serial.write(str[i]);
+  }
+	return len;
 }
 
-void AS289R2::write(const unsigned char c)
+size_t AS289R2::write(const unsigned char c)
 {
+	if(c == '\n') return 0;
 	serial.write(c);
+	return 1;
 }
 
 void AS289R2::initialize(void)
@@ -43,43 +47,43 @@ void AS289R2::setDoubleSizeHeight(void)
 	byte buffer[3] = {0x1B, 0x4E, 0x31};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::clearDoubleSizeHeight(void)
 {
 	byte buffer[3] = {0x1B, 0x4E, 0x30};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setDoubleSizeWidth(void)
 {
 	byte buffer[3] = {0x1B, 0x57, 0x31};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::clearDoubleSizeWidth(void)
 {
 	byte buffer[3] = {0x1B, 0x57, 0x30};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setLargeFont(void)
 {
 	byte buffer[3] = {0x1B, 0x4C, 0x31};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::clearLargeFont()
 {
 	byte buffer[3] = {0x1B, 0x4C, 0x30};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setANKFont(uint8_t font)
 {
 	byte buffer[3] = {0x1B, 0x68, font};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setKanjiFont(uint8_t font)
 {
 	byte buffer[3] ={0x12, 0x53, font};
@@ -144,79 +148,75 @@ void AS289R2::setInterCharacterSpace(uint8_t space)
 	byte buffer[3] ={0x1B, 0x20, space};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::defaultInterCharacterSpace()
 {
 	byte buffer[3] ={0x1B, 0x20, 0x01};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::putPrintPosition(uint8_t position)
 {
 	byte buffer[3] ={0x1B, 0x6C, position};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setScript(script_mode script)
 {
 	byte buffer[3] ={0x1B, 0x73, script};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::clearScript()
 {
 	byte buffer[3] ={0x1B, 0x73, 0x30};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setQuadrupleSize()
 {
 	byte buffer[3] ={0x1C, 0x57, 0x31};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::clearQuadrupleSize()
 {
 	byte buffer[3] ={0x1C, 0x57, 0x30};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setEnlargement(uint8_t width, uint8_t height)
 {
 	byte buffer[4] ={0x1C, 0x65, width, height};
 	serial.write(buffer, 4);
 }
- 
+
 void AS289R2::clearEnlargement()
 {
 	byte buffer[4] ={0x1C, 0x65, 0x31, 0x31};
 	serial.write(buffer, 4);
 }
- 
+
 void AS289R2::setBarCodeHeight(uint8_t height)
 {
 	byte buffer[3] ={0x1D, 0x68, height};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::defaultBarCodeHeight()
 {
 	byte buffer[3] ={0x1D, 0x68, 0x50};
 	serial.write(buffer, 3);
 }
- 
+
 void AS289R2::setBarCodeBarSize(uint8_t narrowbar, uint8_t widebar)
 {
 	byte buffer[4] ={0x1D, 0x77, narrowbar, widebar};
 	serial.write(buffer, 4);
 }
- 
+
 void AS289R2::defaultBarCodeBarSize()
 {
 	byte buffer[4] ={0x1D, 0x77, 0x02, 0x05};
 	serial.write(buffer, 4);
 }
-
-
-
-

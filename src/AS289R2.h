@@ -1,8 +1,9 @@
 #ifndef AS289R2_h
 #define AS289R2_h
 #include <Arduino.h>
+#include <Print.h>
 
-class AS289R2
+class AS289R2 : public Print
 {
   public:
 
@@ -44,8 +45,8 @@ class AS289R2
     };
 
     AS289R2(Stream& s);
-    void print(const char* text);
-	void write(const unsigned char c);
+    virtual size_t write(const char *str);
+	  virtual size_t write(uint8_t c);
 	// Initialize
     void initialize(void);
 	// Line feed
