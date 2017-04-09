@@ -199,6 +199,18 @@ void AS289R2_demo()
   tp.setScript(AS289R2::SCRIPT_CANCEL);
   tp.print("O\r");
 
+  tp.putLineFeed(2);
+
+  /* Print Class */
+  tp.print(String("Arduino String\r"));
+  tp.println("Use println()");
+  tp.println('c');
+  tp.println(100);
+  tp.println(100, HEX);
+  tp.println(-1000);
+  tp.println(1000, OCT);
+  tp.println(123.4567);
+
   /* PaperFeed */
   tp.putPaperFeed(200);
 }
