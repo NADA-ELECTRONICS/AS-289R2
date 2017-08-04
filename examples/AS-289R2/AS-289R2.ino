@@ -124,8 +124,14 @@ void AS289R2_demo()
 
   /* QR code */
   char url[] = "https://www.nada.co.jp/as289r2/";
+  tp.setEnlargedQRCode();
   tp.printQRCode(AS289R2::QR_ERR_LVL_M, url);
   tp.print("\r");
+
+  tp.clearEnlargedQRCode();
+  tp.printQRCode(AS289R2::QR_ERR_LVL_M, url);
+  tp.print("\r");
+
   //tp.printf(url);
 
   tp.putLineFeed(2);

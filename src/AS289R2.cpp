@@ -100,6 +100,18 @@ void AS289R2::printQRCode(uint8_t err, const char *param)
     }
 }
 
+void AS289R2::setEnlargedQRCode()
+{
+	byte buffer[3] = {0x1D, 0x79, 0x31};
+	serial.write(buffer, 3);
+}
+
+void AS289R2::clearEnlargedQRCode()
+{
+	byte buffer[3] = {0x1D, 0x79, 0x30};
+	serial.write(buffer, 3);
+}
+
 void AS289R2::printBarCode(uint8_t code, const char *param)
 {
   uint8_t len = strlen(param);
