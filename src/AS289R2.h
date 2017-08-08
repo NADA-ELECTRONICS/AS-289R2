@@ -62,15 +62,19 @@ class AS289R2 : public Print
     // Cancel double-width printing
     void clearDoubleSizeWidth(void);
     // Apply LargeFont
-    void setLargeFont(void);
+    void setLargeFont();
     // Cancel LargeFont
-    void clearLargeFont(void);
+    void clearLargeFont();
     // Specify ANK character font
     void setANKFont(uint8_t font);
     // Specify Kanji font
     void setKanjiFont(uint8_t font);
     // Print QR Barcode
     void printQRCode(uint8_t err, const char* param);
+    // Apply EnlargedQRCode
+    void setEnlargedQRCode(void);
+    // Clear EnlargedQRCode
+    void clearEnlargedQRCode(void);
     // Print Barcode
     void printBarCode(uint8_t code, const char* param);
     // Print Bitmap image
